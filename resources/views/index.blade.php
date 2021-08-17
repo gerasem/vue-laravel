@@ -10,7 +10,8 @@
 <body>
 
 <div id="app">
-    <test></test>
+    <v-header></v-header>
+    <router-view></router-view>
 </div>
 
 <script src="./js/app.js"></script>
