@@ -2,25 +2,25 @@
     <div>
         <h1>Blog</h1>
         <loader v-if="loading"></loader>
-        <div v-else>
-            <div class="post uk-card uk-card-default uk-card-body uk-width-1-2@m" v-for="post in posts">
-                <h3 class="uk-card-title">{{ post.title }}</h3>
-                <p class="uk-text-meta uk-margin-remove-top">
-                    <time>{{ post.created_at }}</time>
-                </p>
-                <p>{{ post.body }}</p>
-            </div>
+        <div style="display: flex; flex-wrap: wrap;" v-else>
+            <post v-for="post in posts"
+                  :title="post.title"
+                  :body="post.body"
+                  :date="post.created_at"
+            />
         </div>
     </div>
 </template>
 
 <script>
 import Loader from "../components/Loader"
+import Post from "../components/blog/Post";
 import axios from "axios"
 
 export default {
     components: {
-        Loader
+        Loader,
+        Post
     },
     data: () => ({
         loading: true,
@@ -44,7 +44,5 @@ export default {
 </script>
 
 <style scoped>
-.post {
-    margin: 10px 0;
-}
+
 </style>
