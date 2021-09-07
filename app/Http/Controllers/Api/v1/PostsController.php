@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api\v1;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Post;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PostsController extends Controller
 {
@@ -14,7 +16,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        return Post::all();
     }
 
     /**
@@ -31,22 +33,58 @@ class PostsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return array
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'title' => ['required'],
+                'body' => ['required']
+            ]
+        );
+
+        if($validator->fails()) {
+            return [
+                'status' => false,
+                'errors' => $validator->messages()
+            ];
+        }
+
+        $post = Post::create(
+            [
+                'title' => $request->title,
+                'body' => $request->body
+            ]
+        );
+
+        return [
+            'status' => true,
+            'post' => $post
+        ];
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response|object
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+
+        if(!$post) {
+            return response()->json(
+                [
+                    'status' => false,
+                    'message' => 'Post not found'
+                ]
+            )->setStatusCode(404);
+        }
+
+        return $post;
     }
 
     /**

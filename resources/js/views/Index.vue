@@ -1,13 +1,14 @@
 <template>
     <div>
-        Main Page
+        <h1>Index</h1>
     </div>
+
 </template>
 
 <script>
-    export default {
-        name: "Index"
-    }
+export default {
+    name: "Index"
+}
 </script>
 
 <style scoped>

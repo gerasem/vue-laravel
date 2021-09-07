@@ -1,27 +1,24 @@
-import vueRouter from "vue-router"
-import Vue from "vue"
+import vueRouter from 'vue-router'
+import Vue from 'vue'
 
-Vue.use(vueRouter);
+Vue.use(vueRouter)
 
-import Index from "./views/Index"
-import Catalog from "./views/Catalog"
+import Index from './views/Index'
+import Blog from './views/Blog'
 
 const routes = [
     {
         path: "/",
-        component: Index
+        component: Index,
     },
     {
-        path: "/main",
-        component: Index
+        path: "/blog",
+        component: Blog,
     },
-    {
-        path: "/catalog",
-        component: Catalog
-    },
-];
 
-export default new vueRouter({
-    mode: 'history',
+]
+
+export default new vueRouter( {
+    mode: "history",
     routes
 })

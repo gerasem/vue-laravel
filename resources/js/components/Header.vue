@@ -1,29 +1,33 @@
 <template>
-    <div>
-        <nav >
-            <router-link v-for="link in links" :to="link.href">{{ link.name }}</router-link>
-        </nav>
-    </div>
-
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-center">
+            <ul class="uk-navbar-nav">
+                <!--                <li class="uk-active"><a href="">Menu 1</a></li>-->
+                <li v-for="link in links">
+                    <router-link :to="link.href">{{ link.name }}</router-link>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                links: [
-                    {
-                        name: "Main",
-                        href: "/main",
-                    },
-                    {
-                        name: "Catalog",
-                        href: "/catalog",
-                    },
-                ]
-            }
+export default {
+    data() {
+        return {
+            links: [
+                {
+                    name: "Main",
+                    href: "/"
+                },
+                {
+                    name: "Blog",
+                    href: "/blog"
+                },
+            ]
         }
     }
+}
 </script>
 
 <style scoped>
