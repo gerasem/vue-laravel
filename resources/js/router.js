@@ -3,9 +3,10 @@ import Vue from 'vue'
 
 Vue.use(vueRouter)
 
-import Index from './views/Index'
-import Blog from './views/Blog'
-import Post from "./views/Post";
+const Index = () => import ('./views/Index')
+const Blog = () => import ('./views/Blog')
+const Post = () => import ('./views/Post')
+const CreatePost = () => import ('./views/CreatePost')
 
 const routes = [
     {
@@ -19,6 +20,10 @@ const routes = [
     {
         path: "/post/:id",
         component: Post
+    },
+    {
+        path: "/create",
+        component: CreatePost
     }
 ]
 

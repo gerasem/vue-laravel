@@ -28,8 +28,15 @@ Vue.component('v-header', require('./components/Header.vue').default);
  */
 
 import router from "./router"
+import moment from 'moment';
 
 const app = new Vue({
     el: '#app',
     router
+});
+
+Vue.filter('formatDate', function (value) {
+    if (value) {
+        return moment(String(value)).format('DD.MM.YYYY hh:mm')
+    }
 });

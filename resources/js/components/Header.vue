@@ -24,6 +24,10 @@ export default {
                     name: "Blog",
                     href: "/blog"
                 },
+                {
+                    name: "Create Post",
+                    href: "/create"
+                },
             ]
         }
     }

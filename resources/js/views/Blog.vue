@@ -2,8 +2,8 @@
     <div>
         <h1>Blog</h1>
         <loader v-if="loading"></loader>
-        <div style="display: flex; flex-wrap: wrap;" v-else>
-            <PostPreview v-for="post in posts" :key="post.title"
+        <div v-else class="uk-child-width-1-2@m uk-grid-small uk-grid-match" uk-grid>
+            <PostPreview v-for="post in posts" :key="post.id"
                          :title="post.title"
                          :body="post.body"
                          :date="post.created_at"

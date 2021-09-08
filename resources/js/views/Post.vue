@@ -3,7 +3,7 @@
         <Loader v-if="loading"/>
         <div v-else-if="!loading && !notFound">
             <h1>{{ post.title }}
-                <span class="uk-badge">{{ post.created_at }}</span>
+                <span class="uk-badge">{{ post.created_at | formatDate }}</span>
             </h1>
             <p class="uk-text-lead">
                 {{ post.body }}
