@@ -3,10 +3,11 @@
         <h1>Blog</h1>
         <loader v-if="loading"></loader>
         <div style="display: flex; flex-wrap: wrap;" v-else>
-            <post v-for="post in posts"
-                  :title="post.title"
-                  :body="post.body"
-                  :date="post.created_at"
+            <PostPreview v-for="post in posts" :key="post.title"
+                         :title="post.title"
+                         :body="post.body"
+                         :date="post.created_at"
+                         :id="post.id"
             />
         </div>
     </div>
@@ -14,13 +15,13 @@
 
 <script>
 import Loader from "../components/Loader"
-import Post from "../components/blog/Post";
+import PostPreview from "../components/blog/PostPreview";
 import axios from "axios"
 
 export default {
     components: {
         Loader,
-        Post
+        PostPreview
     },
     data: () => ({
         loading: true,
@@ -34,9 +35,7 @@ export default {
             axios.get('/api/posts')
                 .then(response => {
                     this.posts = response.data
-                    setTimeout(() => {
-                        this.loading = false
-                    }, 500)
+                    this.loading = false
                 })
         }
     }

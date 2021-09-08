@@ -12,7 +12,7 @@ class PostsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Post[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
      */
     public function index()
     {
@@ -32,8 +32,8 @@ class PostsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
+     * @param \Illuminate\Http\Request $request
+     * @return array|\Illuminate\Http\JsonResponse|object
      */
     public function store(Request $request)
     {
@@ -45,11 +45,13 @@ class PostsController extends Controller
             ]
         );
 
-        if($validator->fails()) {
-            return [
-                'status' => false,
-                'errors' => $validator->messages()
-            ];
+        if ($validator->fails()) {
+            return response()->json(
+                [
+                    'status' => false,
+                    'error' => $validator->messages()
+                ]
+            )->setStatusCode(200);
         }
 
         $post = Post::create(
@@ -59,27 +61,29 @@ class PostsController extends Controller
             ]
         );
 
-        return [
-            'status' => true,
-            'post' => $post
-        ];
+        return response()->json(
+            [
+                'status' => true,
+                'post' => $post
+            ]
+        )->setStatusCode(200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response|object
      */
     public function show($id)
     {
         $post = Post::find($id);
 
-        if(!$post) {
+        if (!$post) {
             return response()->json(
                 [
                     'status' => false,
-                    'message' => 'Post not found'
+                    'error' => 'Post not found'
                 ]
             )->setStatusCode(404);
         }
@@ -90,7 +94,7 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -101,8 +105,8 @@ class PostsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -113,7 +117,7 @@ class PostsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

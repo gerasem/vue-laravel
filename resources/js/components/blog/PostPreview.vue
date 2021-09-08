@@ -12,7 +12,7 @@
             <p>{{ body }}</p>
         </div>
         <div class="uk-card-footer">
-            <a href="#" class="uk-button uk-button-text">Read more</a>
+            <router-link :to="'/post/' + id" class="uk-button uk-button-text">Read more</router-link>
         </div>
     </div>
 </template>
@@ -31,6 +31,10 @@ export default {
         date: {
             type: String,
             default: 'NULL'
+        },
+        id: {
+            type: Number,
+            default: 1
         },
     }
 }
