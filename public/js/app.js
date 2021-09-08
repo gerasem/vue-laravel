@@ -2123,16 +2123,16 @@ __webpack_require__.r(__webpack_exports__);
             window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"];
             /**
              * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+             * Vue components. It will recursively scan this directory for the Vue
+             * components and automatically register them with their "basename".
+             *
+             * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+             */
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('v-header', __webpack_require__(/*! ./components/Header.vue */ "./resources/js/components/Header.vue")["default"]);
-/**
+            Vue.component('v-header', __webpack_require__(/*! ./components/Header.vue */ "./resources/js/components/Header.vue")["default"]);
+            /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
@@ -2225,8 +2225,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
                 return __webpack_require__.e(/*! import() */ "resources_js_views_Blog_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/Blog */ "./resources/js/views/Blog.vue"));
             };
 
-            var Post = function Post() {
-                return __webpack_require__.e(/*! import() */ "resources_js_views_Post_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/Post */ "./resources/js/views/Post.vue"));
+            var PostIndex = function PostIndex() {
+                return __webpack_require__.e(/*! import() */ "resources_js_views_PostIndex_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/PostIndex */ "./resources/js/views/PostIndex.vue"));
             };
 
             var CreatePost = function CreatePost() {
@@ -2241,7 +2241,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
                 component: Blog
             }, {
                 path: "/post/:id",
-                component: Post
+                component: PostIndex
             }, {
                 path: "/create",
                 component: CreatePost
@@ -6656,13 +6656,13 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
       }
     }]);
 
-    return Toast;
+      return Toast;
   }();
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
+    /**
+     * ------------------------------------------------------------------------
+     * jQuery
+     * ------------------------------------------------------------------------
+     */
 
 
     $__default['default'].fn[NAME$a] = Toast._jQueryInterface;
@@ -34800,8 +34800,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
+/***/
+        "./resources/sass/app.scss":
+        /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
   \*********************************/
         /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -56708,16 +56709,17 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
             __webpack_require__.r(__webpack_exports__);
             /* harmony export */
             __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/**!
- * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.16.1
- * @license
- * Copyright (c) 2016 Federico Zivolo and contributors
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
+                /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+                /* harmony export */
+            });
+            /**!
+             * @fileOverview Kickass library to create and place poppers near their reference elements.
+             * @version 1.16.1
+             * @license
+             * Copyright (c) 2016 Federico Zivolo and contributors
+             *
+             * Permission is hereby granted, free of charge, to any person obtaining a copy
+             * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
@@ -59483,13 +59485,14 @@ process.nextTick = function (fun) {
 };
 
 // v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
+            function Item(fun, array) {
+                this.fun = fun;
+                this.array = array;
+            }
+
+            Item.prototype.run = function () {
+                this.fun.apply(null, this.array);
+            };
             process.title = 'browser';
             process.browser = true;
             process.env = {};
@@ -59641,16 +59644,16 @@ Item.prototype.run = function () {
             var render = function () {
                 var _vm = this
                 var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "nav",
-    { staticClass: "uk-navbar-container", attrs: { "uk-navbar": "" } },
-    [
-      _c("div", { staticClass: "uk-navbar-center" }, [
-        _c(
-          "ul",
-          { staticClass: "uk-navbar-nav" },
-          _vm._l(_vm.links, function(link) {
+                var _c = _vm._self._c || _h
+                return _c(
+                    "nav",
+                    {staticClass: "uk-navbar-container", attrs: {"uk-navbar": ""}},
+                    [
+                        _c("div", {staticClass: "uk-navbar-center"}, [
+                            _c(
+                                "ul",
+                                {staticClass: "uk-navbar-nav"},
+                                _vm._l(_vm.links, function (link) {
             return _c(
               "li",
               [
@@ -59660,12 +59663,12 @@ Item.prototype.run = function () {
               ],
                 1
             )
-          }),
-            0
-        )
-      ])
-    ]
-  )
+                                }),
+                                0
+                            )
+                        ])
+                    ]
+                )
             }
             var staticRenderFns = []
             render._withStripped = true
@@ -59696,16 +59699,16 @@ Item.prototype.run = function () {
 
             function normalizeComponent(
                 scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode /* vue-cli only */
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
+                render,
+                staticRenderFns,
+                functionalTemplate,
+                injectStyles,
+                scopeId,
+                moduleIdentifier, /* server only */
+                shadowMode /* vue-cli only */
+            ) {
+                // Vue.extend constructor export interop
+                var options = typeof scriptExports === 'function'
     ? scriptExports.options
     : scriptExports
 
@@ -74986,14 +74989,16 @@ function getOuterHTML (el) {
   }
 }
 
-Vue.compile = compileToFunctions;
+            Vue.compile = compileToFunctions;
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Vue);
+            /* harmony default export */
+            const __WEBPACK_DEFAULT_EXPORT__ = (Vue);
 
 
-/***/ }),
+            /***/
+        }),
 
-/***/
+        /***/
         "./node_modules/axios/package.json":
         /*!*****************************************!*\
   !*** ./node_modules/axios/package.json ***!
@@ -75189,7 +75194,7 @@ Vue.compile = compileToFunctions;
             if ({
                 "resources_js_views_Index_vue": 1,
                 "resources_js_views_Blog_vue": 1,
-                "resources_js_views_Post_vue": 1,
+                "resources_js_views_PostIndex_vue": 1,
                 "resources_js_views_CreatePost_vue": 1
             }[chunkId]) return "js/" + chunkId + ".js";
             /******/ 			// return url for filenames based on template

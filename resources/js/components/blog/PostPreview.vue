@@ -41,5 +41,8 @@ export default {
 </script>
 
 <style scoped>
-
+.post {
+    display: block;
+    margin: 10px 0;
+}
 </style>

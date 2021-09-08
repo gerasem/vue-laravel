@@ -2,7 +2,7 @@
     <div>
         <h1>Blog</h1>
         <loader v-if="loading"></loader>
-        <div v-else class="uk-child-width-1-2@m uk-grid-small uk-grid-match" uk-grid>
+        <div v-else>
             <PostPreview v-for="post in posts" :key="post.id"
                          :title="post.title"
                          :body="post.body"
