@@ -29,10 +29,12 @@ Vue.component('v-header', require('./components/Header.vue').default);
 
 import router from "./router"
 import moment from 'moment';
+import store from './store'
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    store
 });
 
 Vue.filter('formatDate', function (value) {

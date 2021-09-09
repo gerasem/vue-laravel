@@ -28,6 +28,7 @@
         "moment": "^2.29.1",
         "uikit": "^3.7.2",
         "vue-axios": "^3.2.5",
-        "vue-router": "^3.5.2"
+        "vue-router": "^3.5.2",
+        "vuex": "^3.6.2"
     }
 }

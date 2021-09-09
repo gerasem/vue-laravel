@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\v1\PostsController;
+use App\Http\Controllers\Api\v1\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ use App\Http\Controllers\Api\v1\PostsController;
 //});
 
 Route::resource('posts', PostsController::class);
+Route::apiResource('category', CategoriesController::class);
