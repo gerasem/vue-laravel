@@ -2133,16 +2133,16 @@ __webpack_require__.r(__webpack_exports__);
 
             Vue.component('v-header', __webpack_require__(/*! ./components/Header.vue */ "./resources/js/components/Header.vue")["default"]);
             /**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+             * Next, we will create a fresh Vue application instance and attach it to
+             * the page. Then, you may begin adding components to this application
+             * or customize the JavaScript scaffolding to fit your unique needs.
+             */
 
 
 
-var app = new Vue({
-  el: '#app',
-  router: _router__WEBPACK_IMPORTED_MODULE_0__["default"]
+            var app = new Vue({
+                el: '#app',
+                router: _router__WEBPACK_IMPORTED_MODULE_0__["default"]
 });
             Vue.filter('formatDate', function (value) {
                 if (value) {
@@ -6650,10 +6650,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
         return DefaultType$7;
       }
     }, {
-      key: "Default",
-      get: function get() {
-        return Default$7;
-      }
+        key: "Default",
+        get: function get() {
+            return Default$7;
+        }
     }]);
 
       return Toast;
@@ -34791,16 +34791,18 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
     !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
       return _;
     }).call(exports, __webpack_require__, exports, module),
-		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
   }
   // Check for `exports` after `define` in case a build optimizer adds it.
-  else {}
-}.call(this));
+  else {
+  }
+            }.call(this));
 
 
-/***/ }),
+            /***/
+        }),
 
-/***/
+        /***/
         "./resources/sass/app.scss":
         /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -56720,16 +56722,16 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
              *
              * Permission is hereby granted, free of charge, to any person obtaining a copy
              * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+             * in the Software without restriction, including without limitation the rights
+             * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+             * copies of the Software, and to permit persons to whom the Software is
+             * furnished to do so, subject to the following conditions:
+             *
+             * The above copyright notice and this permission notice shall be included in all
+             * copies or substantial portions of the Software.
+             *
+             * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+             * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
@@ -59654,15 +59656,15 @@ process.nextTick = function (fun) {
                                 "ul",
                                 {staticClass: "uk-navbar-nav"},
                                 _vm._l(_vm.links, function (link) {
-            return _c(
-              "li",
-              [
-                _c("router-link", { attrs: { to: link.href } }, [
-                  _vm._v(_vm._s(link.name))
-                ])
-              ],
-                1
-            )
+                                    return _c(
+                                        "li",
+                                        [
+                                            _c("router-link", {attrs: {to: link.href}}, [
+                                                _vm._v(_vm._s(link.name))
+                                            ])
+                                        ],
+                                        1
+                                    )
                                 }),
                                 0
                             )
@@ -59709,15 +59711,15 @@ process.nextTick = function (fun) {
             ) {
                 // Vue.extend constructor export interop
                 var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
+                    ? scriptExports.options
+                    : scriptExports
 
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
+                // render functions
+                if (render) {
+                    options.render = render
+                    options.staticRenderFns = staticRenderFns
+                    options._compiled = true
+                }
 
   // functional template
   if (functionalTemplate) {
@@ -74981,11 +74983,11 @@ Vue.prototype.$mount = function (
  */
 function getOuterHTML (el) {
   if (el.outerHTML) {
-    return el.outerHTML
+      return el.outerHTML
   } else {
-    var container = document.createElement('div');
-    container.appendChild(el.cloneNode(true));
-    return container.innerHTML
+      var container = document.createElement('div');
+      container.appendChild(el.cloneNode(true));
+      return container.innerHTML
   }
 }
 
