@@ -3,8 +3,7 @@ import Vue from 'vue'
 
 Vue.use(vueRouter)
 
-const Index = () => import ('./views/Index')
-const Blog = () => import ('./views/Blog')
+import Index from './views/Index'
 const PostIndex = () => import ('./views/PostIndex')
 const CreatePost = () => import ('./views/CreatePost')
 
@@ -15,7 +14,7 @@ const routes = [
     },
     {
         path: "/blog",
-        component: Blog,
+        component: () => import('./views/Blog'),
     },
     {
         path: "/post/:id",
