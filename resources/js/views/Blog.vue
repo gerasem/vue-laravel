@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Categories/>
         <h1>Blog</h1>
         <loader v-if="loading"></loader>
         <div v-else>
@@ -16,12 +17,13 @@
 <script>
 import Loader from "../components/Loader"
 import PostPreview from "../components/blog/PostPreview";
-import axios from "axios"
+import Categories from "../components/Categories";
 
 export default {
     components: {
         Loader,
-        PostPreview
+        PostPreview,
+        Categories
     },
     data: () => ({
         loading: true,
