@@ -5,26 +5,39 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        categories: []
+        categories: [],
+        posts: []
     },
     getters: {
         getCategories({categories}) {
             return categories
-        }
+        },
+        getPosts({posts}) {
+            return posts
+        },
     },
     actions: {
         ajaxCategoriesFromDB({commit}) {
-            axios
-                .get("api/category")
-                .then(res => {
-                    commit('getCategories', res.data.categories)
+            axios.get("api/category")
+                .then(response => {
+                    commit('getCategoriesFromStore', response.data.categories)
+                })
+                .catch(err => console.log('Error', err))
+        },
+        ajaxPostsFromDB({commit}) {
+            axios.get('/api/posts')
+                .then(response => {
+                    commit('getPostsFromStore', response.data)
                 })
                 .catch(err => console.log('Error', err))
         }
     },
     mutations: {
-        getCategories(state, data) {
+        getCategoriesFromStore(state, data) {
             return state.categories = data
+        },
+        getPostsFromStore(state, data) {
+            return state.posts = data
         }
     }
 })

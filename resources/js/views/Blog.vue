@@ -4,7 +4,7 @@
         <h1>Blog</h1>
         <loader v-if="loading"></loader>
         <div v-else>
-            <PostPreview v-for="post in posts" :key="post.id"
+            <PostPreview v-for="post in getPosts" :key="post.id"
                          :title="post.title"
                          :body="post.body"
                          :date="post.created_at"
@@ -27,20 +27,18 @@ export default {
     },
     data: () => ({
         loading: true,
-        posts: []
     }),
     mounted() {
-        this.loadPosts()
+        //DB Connection
+        this.$store.dispatch('ajaxPostsFromDB')
+        this.loading = false
     },
-    methods: {
-        loadPosts() {
-            axios.get('/api/posts')
-                .then(response => {
-                    this.posts = response.data
-                    this.loading = false
-                })
+    computed: {
+        //get all Posts
+        getPosts() {
+            return this.$store.getters.getPosts
         }
-    }
+    },
 }
 </script>
 
