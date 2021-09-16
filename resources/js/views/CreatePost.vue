@@ -10,14 +10,18 @@
                 <div class="uk-margin">
                     <input v-model="form.title" class="uk-input" type="text" placeholder="Title">
                 </div>
+
                 <div class="uk-margin">
                     <textarea v-model="form.body" class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
                 </div>
                 <p uk-margin>
-                    <button type="submit" class="uk-button uk-button-primary" @click.prevent="store">
-                        <span v-if="loading" class="loader" uk-spinner></span>
-                        <span v-else>Create Post</span>
-                    </button>
+                    <v-button
+                        :loading="loading"
+                        @click-button="store"
+                        class="uk-button-primary"
+                    >
+                        Create Post
+                    </v-button>
                 </p>
             </fieldset>
         </form>
@@ -26,7 +30,6 @@
 
 <script>
 export default {
-    components: {},
     data: () => ({
         form: {
             title: "",

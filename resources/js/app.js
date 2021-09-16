@@ -20,6 +20,7 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('v-header', require('./components/Header.vue').default);
+// Vue.component('v-button', require('./components/UI/VButton.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -30,6 +31,13 @@ Vue.component('v-header', require('./components/Header.vue').default);
 import router from "./router"
 import moment from 'moment';
 import store from './store'
+
+// Глобальная регистрация UI компонентов
+import components from './components/UI'
+
+components.forEach(component => {
+    Vue.component(component.name, component);
+})
 
 const app = new Vue({
     el: '#app',
