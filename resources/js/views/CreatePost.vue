@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form>
+        <form @submit.prevent="store">
             <fieldset class="uk-fieldset">
                 <legend class="uk-legend">Create Post</legend>
                 <div class="uk-alert-danger" uk-alert v-if="error">
@@ -8,7 +8,7 @@
                 </div>
 
                 <div class="uk-margin">
-                    <input v-model="form.title" class="uk-input" type="text" placeholder="Title">
+                    <input v-model="form.title" class="uk-input" type="text" placeholder="Title"/>
                 </div>
 
                 <div class="uk-margin">
@@ -17,8 +17,8 @@
                 <p uk-margin>
                     <v-button
                         :loading="loading"
-                        @click-button="store"
                         class="uk-button-primary"
+                        type="submit"
                     >
                         Create Post
                     </v-button>

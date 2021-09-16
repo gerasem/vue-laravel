@@ -1,5 +1,5 @@
 <template>
-    <button @click.prevent="$emit('click-button')" class="uk-button">
+    <button class="uk-button">
         <span v-if="loading" class="loader" uk-spinner></span>
         <span v-else>
             <slot></slot>
@@ -16,11 +16,6 @@ export default {
             default: false
         }
     },
-    methods: {
-        test() {
-            console.log('test')
-        }
-    }
 }
 </script>
 
