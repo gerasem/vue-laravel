@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="{{ asset('assets/css/uikit.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/uikit-rtl.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/uikit-rtl.min.css') }}"/>
 </head>
 <body>
 <div id="app">
@@ -17,7 +17,7 @@
             <router-view></router-view>
         </div>
     </main>
-
+    <v-header></v-header>
 </div>
 
 <script src="{{ asset('assets/js/uikit.min.js') }}"></script>

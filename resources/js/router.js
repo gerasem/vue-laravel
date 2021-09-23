@@ -4,6 +4,7 @@ import Vue from 'vue'
 Vue.use(vueRouter)
 
 import Index from './views/Index'
+import Test from "./views/Test";
 const PostIndex = () => import ('./views/PostIndex')
 const CreatePost = () => import ('./views/CreatePost')
 
@@ -23,10 +24,21 @@ const routes = [
     {
         path: "/create",
         component: CreatePost
-    }
+    },
+    {
+        path: "/test",
+        component: Test
+    },
 ]
 
-export default new vueRouter( {
+export default new vueRouter({
     mode: "history",
-    routes
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition
+        } else {
+            return {x: 0, y: 0}
+        }
+    }
 })

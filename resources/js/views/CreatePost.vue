@@ -8,7 +8,7 @@
                 </div>
 
                 <div class="uk-margin">
-                    <input v-model="form.title" class="uk-input" type="text" placeholder="Title"/>
+                    <input v-model="form.title" class="uk-input" type="text" placeholder="Title">
                 </div>
 
                 <div class="uk-margin">

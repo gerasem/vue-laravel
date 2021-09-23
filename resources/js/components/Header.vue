@@ -28,6 +28,10 @@ export default {
                     name: "Create Post",
                     href: "/create"
                 },
+                {
+                    name: "Test",
+                    href: "/test"
+                }
             ]
         }
     }

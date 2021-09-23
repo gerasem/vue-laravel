@@ -4,11 +4,9 @@
         <h1>Blog</h1>
         <loader v-if="loading"></loader>
         <div v-else>
-            <PostPreview v-for="post in getPosts" :key="post.id"
-                         :title="post.title"
-                         :body="post.body"
-                         :date="post.created_at"
-                         :id="post.id"
+            <PostPreview v-for="post in getPosts"
+                         :key="post.id"
+                         :post="post"
             />
         </div>
     </div>
