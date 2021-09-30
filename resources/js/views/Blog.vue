@@ -2,9 +2,19 @@
     <div>
         <Categories/>
         <h1>Blog</h1>
+        <!--        <VSelect-->
+        <!--            v-model="selectedSort"-->
+        <!--            :options="sortOptions"-->
+        <!--            @changeOption="optionFromSelect"-->
+        <!--        />-->
+        <select class="v-select uk-select" v-model="selectedSort">
+            <option value="title">Title</option>
+            <option value="date">Date</option>
+            <option value="body">Body</option>
+        </select>
         <loader v-if="loading"></loader>
         <div v-else>
-            <PostPreview v-for="post in getPosts"
+            <PostPreview v-for="post in sortPosts"
                          :key="post.id"
                          :post="post"
             />
@@ -16,15 +26,23 @@
 import Loader from "../components/Loader"
 import PostPreview from "../components/blog/PostPreview";
 import Categories from "../components/Categories";
+import VSelect from "../components/UI/VSelect";
 
 export default {
     components: {
+        VSelect,
         Loader,
         PostPreview,
         Categories
     },
     data: () => ({
         loading: true,
+        selectedSort: 'title',
+        sortOptions: [
+            {value: "title", name: "Title"},
+            {value: "body", name: "Body"},
+            {value: "date", name: "Date"},
+        ]
     }),
     mounted() {
         //DB Connection
@@ -35,8 +53,24 @@ export default {
         //get all Posts
         getPosts() {
             return this.$store.getters.getPosts
+        },
+        sortPosts: function () {
+            return [...this.getPosts].sort((post1, post2) => {
+                return post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]);
+            })
         }
     },
+    methods: {
+        optionFromSelect(option) {
+            this.selectedSort = option
+        }
+    },
+    /*    watch: {
+            selectedSort(newValue) {
+                console.log(newValue)
+            }
+        }*/
+
 }
 </script>
 
