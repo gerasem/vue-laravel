@@ -2,16 +2,13 @@
     <div>
         <Categories/>
         <h1>Blog</h1>
-        <!--        <VSelect-->
-        <!--            v-model="selectedSort"-->
-        <!--            :options="sortOptions"-->
-        <!--            @changeOption="optionFromSelect"-->
-        <!--        />-->
-        <select class="v-select uk-select" v-model="selectedSort">
-            <option value="title">Title</option>
-            <option value="date">Date</option>
-            <option value="body">Body</option>
-        </select>
+
+        <VSelect
+            v-model="selectedSort"
+            :options="sortOptions"
+            @changeOption="optionFromSelect"
+        />
+
         <loader v-if="loading"></loader>
         <div v-else>
             <PostPreview v-for="post in sortPosts"
